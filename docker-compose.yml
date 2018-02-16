@@ -1,0 +1,6 @@
+fpm:
+    image: yannoff/php-fpm
+    volumes:
+        - "$PWD:/var/www/html"
+    ports:
+        - "$EXPOSED_PORT:80"
