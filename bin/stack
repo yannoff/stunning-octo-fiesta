@@ -1,21 +1,22 @@
 #!/bin/bash
 
+[ -z "$1" ] && usage
+
+source $PWD/.env
+
+
 usage(){
     echo -e "\nUsage: $0 start|stop|log|restart\n"
     exit
 }
 
 stack_start(){
-    docker-compose up -d && docker-compose exec fpm php -S 0.0.0.0:80 -t ./
+    docker-compose up -d && docker-compose exec fpm php -S 0.0.0.0:80 -t $DOCUMENT_ROOT
 }
 
 stack_stop(){
     docker-compose down
 }
-
-[ -z "$1" ] && usage
-
-source $PWD/.env
 
 case $1 in
     start)

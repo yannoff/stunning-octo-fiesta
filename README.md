@@ -6,13 +6,26 @@ A leaf-weight docker stack for PHP development.
 - docker
 - docker-compose
 
+## Installation
+1. Download the `zip` archive from github.
+
+2. Change directory for your web project sources
+```bash
+$ cd my-web-project
+```
+3. Unzip from here:
+```bash
+$ unzip stunning-octo-fiesta-master.zip
+```
+4. You're ready to go!
+
 ## Usage
 
 ```bash
 $ bin/stack start|stop|log|restart
 ```
 
-## Example
+## Running the stack
 
 ```bash
 $ bin/stack start
@@ -25,9 +38,10 @@ This project comes in with a wrapper script for `composer`, allowing to run it i
 
 > This can be very useful if `php` is not installed on the host machine, or if `PHP_VERSION` does not match your `composer.json` requirements.
 
+### Example using composer
 
 ```bash
-bin/composer show
+$ bin/composer show
 ```
 
 ## Customizing
@@ -36,6 +50,7 @@ You can customize the stack editing the `.env` file.
 
 Available parameters:
 - `EXPOSED_PORT` The port to access your website (defaults to 8000)
+- `DOCUMENT_ROOT` Relative path to your document root (defaults to ./)
 
 ## Note
 The stack uses `PHP`'s built-in development server.
