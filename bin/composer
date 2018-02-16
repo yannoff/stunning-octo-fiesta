@@ -1,0 +1,12 @@
+#!/bin/bash
+
+err(){
+    printf "$@"
+    exit 1
+}
+
+# Check wether fpm service is up. If not, exit gently
+docker-compose ps fpm >/dev/null 2>&1
+[ "$?" -eq "0" ] || err "It seems like stack is asleep... Wke it using: bin/stack start! :)"
+
+docker-compose exec fpm composer "$@"

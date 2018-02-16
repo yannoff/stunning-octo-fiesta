@@ -12,7 +12,23 @@ A leaf-weight docker stack for PHP development.
 $ bin/stack start|stop|log|restart
 ```
 
+## Example
+
+```bash
+$ bin/stack start
+```
 Now your php site is accessible at `http://localhost:8000/`
+
+## Using composer
+
+This project comes in with a wrapper script for `composer`, allowing to run it inside the container.
+
+> This can be very useful if `php` is not installed on the host machine, or if `PHP_VERSION` does not match your `composer.json` requirements.
+
+
+```bash
+bin/composer show
+```
 
 ## Customizing
 
