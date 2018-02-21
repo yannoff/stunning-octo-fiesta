@@ -15,20 +15,20 @@ $ cd my-web-project
 ```
 3. Unzip from here:
 ```bash
-$ unzip stunning-octo-fiesta-master.zip
+$ unzip /path/to/downloaded/stunning-octo-fiesta-master.zip
 ```
 4. You're ready to go!
 
 ## Usage
 
 ```bash
-$ bin/stack start|stop|log|restart
+$ bin/server start|stop|log|restart
 ```
 
 ## Running the stack
 
 ```bash
-$ bin/stack start
+$ bin/server start
 ```
 Now your php site is accessible at `http://localhost:8000/`
 
@@ -49,8 +49,9 @@ $ bin/composer show
 You can customize the stack editing the `.env` file.
 
 Available parameters:
-- `EXPOSED_PORT` The port to access your website (defaults to 8000)
-- `DOCUMENT_ROOT` Relative path to your document root (defaults to ./)
+- `EXPOSED_PORT` The port to access your website (defaults to `8000`)
+- `DOCUMENT_ROOT` Relative path to your document root (defaults to `./`)
+- `PHP_VERSION` The version of PHP (defaults to `7.1`)
 
 ## Note
 The stack uses `PHP`'s built-in development server.

@@ -1,5 +1,5 @@
 fpm:
-    image: yannoff/php-fpm
+    image: yannoff/php-fpm:${PHP_VERSION}-fpm-alpine
     volumes:
         - "$PWD:/var/www/html"
     ports:
